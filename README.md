@@ -8,6 +8,7 @@ Materials for setting up a Jupyter data science environment and exploring introd
 - [Getting Started](#getting-started)
 - [Starting Jupyter Server](#starting-jupyter-server)
 - [Requirements](#requirements)
+- [Homebrew Installation (macOS)](#homebrew-installation-macos)
 - [Git Installation](#git-installation)
 - [GitHub CLI Setup](#github-cli-setup)
 - [SSH Key Setup for GitHub](#ssh-key-setup-for-github)
@@ -111,6 +112,49 @@ deactivate
 
 - Python 3.x
 - Libraries: pandas, numpy, matplotlib, seaborn, scipy, scikit-learn
+
+---
+
+## Homebrew Installation (macOS)
+
+Homebrew is a package manager for macOS that makes it easy to install developer tools.
+
+### Install Homebrew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Add Homebrew to PATH
+
+After installation, follow the instructions shown in the terminal. Typically:
+
+```bash
+# For Apple Silicon (M1/M2/M3)
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# For Intel Macs
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/usr/local/bin/brew shellenv)"
+```
+
+### Verify Installation
+
+```bash
+brew --version
+```
+
+### Common Commands
+
+| Command | Description |
+|---------|-------------|
+| `brew install <package>` | Install a package |
+| `brew uninstall <package>` | Uninstall a package |
+| `brew update` | Update Homebrew |
+| `brew upgrade` | Upgrade all packages |
+| `brew list` | List installed packages |
+| `brew search <name>` | Search for packages |
 
 ---
 
