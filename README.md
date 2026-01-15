@@ -227,3 +227,113 @@ git clone git@github.com-work:username/repo.git
 **Wrong account used**
 - Check your SSH config file (`~/.ssh/config`)
 - Use the correct host alias when cloning
+
+---
+
+## Git Configuration
+
+Configure Git with your identity and preferences.
+
+### Required: Set Your Identity
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+
+### Set Default Branch Name
+
+```bash
+git config --global init.defaultBranch main
+```
+
+### Set Default Editor
+
+```bash
+# VS Code
+git config --global core.editor "code --wait"
+
+# Vim
+git config --global core.editor "vim"
+
+# Nano
+git config --global core.editor "nano"
+```
+
+### Useful Aliases
+
+```bash
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.cm "commit -m"
+git config --global alias.lg "log --oneline --graph --all"
+```
+
+### Line Ending Configuration
+
+#### macOS/Linux
+```bash
+git config --global core.autocrlf input
+```
+
+#### Windows
+```bash
+git config --global core.autocrlf true
+```
+
+### Credential Helper
+
+#### macOS (use Keychain)
+```bash
+git config --global credential.helper osxkeychain
+```
+
+#### Windows (use Windows Credential Manager)
+```bash
+git config --global credential.helper wincred
+```
+
+#### Linux (cache for 1 hour)
+```bash
+git config --global credential.helper 'cache --timeout=3600'
+```
+
+### Per-Repository Configuration
+
+For different identities per project (e.g., work vs personal):
+
+```bash
+cd /path/to/work/repo
+git config user.name "Work Name"
+git config user.email "work@company.com"
+```
+
+### View Your Configuration
+
+```bash
+# View all settings
+git config --list
+
+# View specific setting
+git config user.name
+
+# View where settings are defined
+git config --list --show-origin
+```
+
+### Recommended Global Settings
+
+```bash
+# Enable colored output
+git config --global color.ui auto
+
+# Set pull behavior to rebase
+git config --global pull.rebase true
+
+# Prune deleted remote branches on fetch
+git config --global fetch.prune true
+
+# Set default push behavior
+git config --global push.default current
+```
