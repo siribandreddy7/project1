@@ -56,12 +56,6 @@ Materials for setting up a Jupyter data science environment and exploring introd
 
 ### macOS
 
-#### Option 1: Xcode Command Line Tools (Recommended)
-```bash
-xcode-select --install
-```
-
-#### Option 2: Homebrew
 ```bash
 brew install git
 ```
