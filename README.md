@@ -2,6 +2,18 @@
 
 Materials for setting up a Jupyter data science environment and exploring introductory data science concepts.
 
+## Table of Contents
+
+- [Files](#files)
+- [Getting Started](#getting-started)
+- [Requirements](#requirements)
+- [Git Installation](#git-installation)
+- [GitHub CLI Setup](#github-cli-setup)
+- [SSH Key Setup for GitHub](#ssh-key-setup-for-github)
+- [Git Configuration](#git-configuration)
+
+---
+
 ## Files
 
 ### Setup Guides
