@@ -116,3 +116,114 @@ To see all authenticated accounts:
 ```bash
 gh auth status
 ```
+
+---
+
+## SSH Key Setup for GitHub
+
+SSH keys provide secure authentication to GitHub without entering your password each time.
+
+### Generate an SSH Key
+
+Use Ed25519 (recommended by GitHub):
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/id_ed25519_github
+```
+
+Press Enter to accept defaults (or set a passphrase for extra security).
+
+### Add Key to SSH Agent
+
+#### macOS/Linux
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_github
+```
+
+#### Windows (Git Bash)
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519_github
+```
+
+#### Windows (PowerShell)
+```powershell
+Start-Service ssh-agent
+ssh-add $env:USERPROFILE\.ssh\id_ed25519_github
+```
+
+### Copy Public Key
+
+#### macOS
+```bash
+pbcopy < ~/.ssh/id_ed25519_github.pub
+```
+
+#### Linux
+```bash
+cat ~/.ssh/id_ed25519_github.pub
+# Then copy the output manually
+```
+
+#### Windows
+```bash
+clip < ~/.ssh/id_ed25519_github.pub
+```
+
+### Add Key to GitHub
+
+1. Go to [GitHub Settings > SSH and GPG keys](https://github.com/settings/keys)
+2. Click **New SSH key**
+3. Give it a title (e.g., "My Laptop")
+4. Paste your public key
+5. Click **Add SSH key**
+
+### Test Connection
+
+```bash
+ssh -T git@github.com
+```
+
+You should see: `Hi username! You've successfully authenticated...`
+
+### Multiple GitHub Accounts
+
+If you have multiple GitHub accounts, configure `~/.ssh/config`:
+
+```
+# Personal account
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+    IdentitiesOnly yes
+
+# Work/School account
+Host github.com-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+    IdentitiesOnly yes
+```
+
+Then clone using the appropriate host alias:
+
+```bash
+# Personal account
+git clone git@github.com:username/repo.git
+
+# Work account
+git clone git@github.com-work:username/repo.git
+```
+
+### Troubleshooting
+
+**Permission denied (publickey)**
+- Ensure the SSH agent is running: `eval "$(ssh-agent -s)"`
+- Add your key: `ssh-add ~/.ssh/id_ed25519_github`
+- Verify key is added: `ssh-add -l`
+
+**Wrong account used**
+- Check your SSH config file (`~/.ssh/config`)
+- Use the correct host alias when cloning
