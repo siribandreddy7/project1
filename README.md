@@ -40,6 +40,64 @@ Materials for setting up a Jupyter data science environment and exploring introd
 
 ---
 
+## Git Installation
+
+### macOS
+
+#### Option 1: Xcode Command Line Tools (Recommended)
+```bash
+xcode-select --install
+```
+
+#### Option 2: Homebrew
+```bash
+brew install git
+```
+
+### Windows
+
+#### Option 1: Git for Windows (Recommended)
+Download and install from [git-scm.com](https://git-scm.com/download/win)
+
+During installation:
+- Select "Git from the command line and also from 3rd-party software"
+- Select "Use bundled OpenSSH"
+- Select "Checkout Windows-style, commit Unix-style line endings"
+- Select "Use Windows' default console window" or "Use MinTTY"
+
+#### Option 2: winget
+```bash
+winget install --id Git.Git
+```
+
+### Linux
+
+#### Debian/Ubuntu
+```bash
+sudo apt update
+sudo apt install git
+```
+
+#### Fedora
+```bash
+sudo dnf install git
+```
+
+#### Arch Linux
+```bash
+sudo pacman -S git
+```
+
+### Verify Installation
+
+```bash
+git --version
+```
+
+You should see something like: `git version 2.x.x`
+
+---
+
 ## GitHub CLI Setup
 
 The GitHub CLI (`gh`) allows you to interact with GitHub from the command line — create repos, manage pull requests, and more.
