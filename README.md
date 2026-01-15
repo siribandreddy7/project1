@@ -114,6 +114,21 @@ deactivate
 - Python 3.x
 - Libraries: pandas, numpy, matplotlib, seaborn, scipy, scikit-learn
 
+### Installing Dependencies
+
+After creating and activating your virtual environment, install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+This installs all libraries needed for the data science tour notebook, including:
+- **pandas, numpy** — Data manipulation
+- **matplotlib, seaborn, plotly** — Visualization
+- **scipy, statsmodels** — Statistical analysis
+- **scikit-learn** — Machine learning
+- **jupyterlab, notebook** — Jupyter environment
+
 ---
 
 ## Homebrew Installation (macOS)
