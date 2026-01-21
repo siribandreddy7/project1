@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Jupyter Setup Exercises
 
 Materials for setting up a Jupyter data science environment and exploring introductory data science concepts.
@@ -591,3 +590,6 @@ git config --global push.default current
 =======
 # project1
 >>>>>>> 6730b43d940e86e9c2d39cbae09842c4ce4a812b
+=======
+project1
+>>>>>>> 70795772babf1655adf2925e29cd4c2139dfbcc1
