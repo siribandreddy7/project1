@@ -1,0 +1,15 @@
+# Virtual environments
+venv/
+env/
+jupyter_env/
+diabetes_env/
+
+# Jupyter auto-generated files
+.ipynb_checkpoints/
+
+# Compressed / temporary files
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
