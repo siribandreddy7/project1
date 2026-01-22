@@ -1,7 +1,0 @@
-.DS_Store
-
-# Virtual environments
-jupyter_env/
-
-# Jupyter checkpoints
-.ipynb_checkpoints/
