@@ -1,3 +1,5 @@
+Name: Siri Bandreddy
+
 # Jupyter Setup Exercises
 
 Materials for setting up a Jupyter data science environment and exploring introductory data science concepts.
