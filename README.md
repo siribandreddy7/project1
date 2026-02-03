@@ -1,4 +1,4 @@
-Name: Siri Bandreddy
+Name: Siri Bandreddy;
 Pima Indians Diabetes Dataset
 # Jupyter Setup Exercises
 
